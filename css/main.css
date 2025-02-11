@@ -6,6 +6,7 @@
     font-weight: 400;
     src: url('../fonts/changa-one-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* open-sans-regular - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -14,6 +15,7 @@
     font-weight: 400;
     src: url('../fonts/open-sans-v40-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* open-sans-italic - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -22,6 +24,7 @@
     font-weight: 400;
     src: url('../fonts/open-sans-v40-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* open-sans-800 - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -34,41 +37,43 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     background-color: #fdfffc;
     color: #011627;
-    font-size: 100%;
+    font-size: 1rem;
     line-height: 1.4;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
-h1, h2, h3, .logo {
+
+h1,
+h2,
+h3,
+.logo {
     font-family: "Changa One", cursive;
     font-weight: 400;
 }
+
 h1 {
     font-size: 2rem;
     margin-bottom: 1em;
 }
+
 h2 {
     font-size: 1.5rem;
     margin-bottom: .75em;
 }
+
 p {
     line-height: 1.5;
 }
+
 a {
-    color: #e71d36;
+    color: #e71d36 ;
     text-decoration: none;
-}
-/* Contenu principal */
-main {
-    padding: 0 5%;
-}
-main ul li a {
-    padding-left: 30px;
 }
 
 /* Header */
@@ -81,10 +86,12 @@ header {
 header .logo {
     text-align: center;
 }
+
 header .nom {
     color: #2ec4b6;
     font-size: 1.75rem;
 }
+
 header .metier {
     margin-top: -5px;
 }
@@ -93,6 +100,7 @@ header .metier {
 header nav {
     text-align: center;
 }
+
 header nav ul {
     list-style-type: none;
     padding: 0;
@@ -102,29 +110,37 @@ header nav ul li {
     display: inline-block;
     margin: 0 1em;
 }
+
+header nav ul .hide {
+    display: none;
+}
+
 header nav ul li a {
     color: #fdfffc;
+    font-weight: 800;
 }
+
+/* Liens survolés et actifs en bleu */
 header nav ul li a:hover,
 header nav ul li.actif a
 {
-    color: #2ec4b4;
+    color: #2ec4b6;
 }
-header nav ul li.hide {
-    display: none;
+
+/* Contenu principal */
+main {
+    padding: 0 5%; /* 5% à gauche et à droite */
 }
-.logo {
-    font-family: 'Changa One', cursive;
-    font-weight: 400;
-}
-/* Footer */
+
+/* Pied de page du site */
 footer {
     text-align: center;
-    margin: 50px 0;
+    margin: 50px 0; /* 50px en haut et en bas */
 }
+
 footer nav ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* On enlève les puces */
+    padding: 0; /* On enlève les marges intérieures */
 }
 
 footer nav ul li {
@@ -136,37 +152,56 @@ footer nav ul li img {
     width: 50px;
     height: 50px;
     filter: grayscale(100%);
-    transition: all 0.5s;
+    transition: all 1s;
+    animation: beat 1s infinite;
 }
 
 footer nav ul li img:hover {
     filter: grayscale(0);
-    transform: scale(1.1);
+    transform: rotate(-10deg);
 }
+
+/* Simule un battement de coeur */
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Page contact */
 .page-contact ul.contacts {
     list-style-type: none;
 }
 
 .page-contact ul.contacts li {
     margin-bottom: .5em;
- }
+}
 
 .page-contact ul.contacts a {
     padding-left: 30px;
     background-image: url("../img/phone.png");
     background-repeat: no-repeat;
-    background-size: 20px 20px;
-    background-position: 0 2px;
+    background-size: 20px 20px; /* largeur hauteur */
+    background-position: 0 2px; /* position horizontale verticale */
 }
 
+/* Lien qui commence par "mailto" */
 .page-contact ul.contacts a[href^="mailto"] {
     background-image: url("../img/mail.png");
 }
 
+/* Lien qui contient "twitter" */
 .page-contact ul.contacts a[href*="twitter"] {
     background-image: url("../img/twitter.png");
 }
 
+/* Lien qui contient "facebook" */
 .page-contact ul.contacts a[href*="facebook"] {
     background-image: url("../img/facebook.png");
 }
