@@ -48,6 +48,10 @@ body {
     padding: 0;
     margin: 0;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 h1,
 h2,
@@ -205,3 +209,48 @@ footer nav ul li img:hover {
 .page-contact ul.contacts a[href*="facebook"] {
     background-image: url("../img/facebook.png");
 }
+
+/* Page accueil */
+.page-accueil .realisations {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page-accueil .realisations li {
+    flex-basis: 50%;
+    flex-grow: 2;
+    padding: 10px;
+}
+
+.page-accueil .realisations figure {
+    margin: 0;
+}
+
+.page-accueil .flex-container {
+    display: flex;
+}
+
+/* Media Queries */
+@media screen and (min-width: 480px) {
+    .page-accueil .realisations li {
+        flex-basis: calc(100% / 3);
+        flex-grow: 3;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    main {
+        background-color: green;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    main {
+        background-color: blue;
+    }
+}
+
+
